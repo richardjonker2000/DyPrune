@@ -1,7 +1,6 @@
 import json
 import math
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import random
 import time
 from collections import OrderedDict
@@ -149,7 +148,7 @@ def graph_visualizer(number_of_layer, neurons, weight_pruning):
     plt.show()
 
 
-class DynamicNeuralNetwork(nn.Module):
+class DyPrune(nn.Module):
     def __init__(self, number_of_layers, neurons, loss=nn.CrossEntropyLoss(),
                  optimizer=torch.optim.AdamW, learning_rate=1e-3,
                  pruning="dynamic", pruning_iter=4, pruning_rate="dynamic", pruning_type="l1", pruning_min=0,
