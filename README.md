@@ -1,6 +1,9 @@
 # DyPrune
 Dynamic pruning rates for neural networks
 
+![DyPrune](download.png)
+
+
 
 ## Installation
 
