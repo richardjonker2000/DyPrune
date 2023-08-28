@@ -1,5 +1,5 @@
 # DyPrune
-Dynamic pruning rates for neural networks
+Dynamic pruning for neural networks. Implemented in PyTorch. Supports Dynamic Pruning Rates(A pruning rate that changes based on model time) and dynamic pruning iterations. More information can be seen in the paper: 
 
 ![DyPrune](download.png)
 
