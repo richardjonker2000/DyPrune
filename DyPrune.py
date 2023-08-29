@@ -244,7 +244,7 @@ class DyPrune(nn.Module):
             layers[layer_name] = nn.ReLU()
         layers['output'] = nn.Linear(neurons[number_of_layers - 2], neurons[number_of_layers - 1])
 
-        super(DynamicNeuralNetwork, self).__init__()
+        super(DyPrune, self).__init__()
         self.flatten = nn.Flatten()
         self.linear_relu_stack = nn.Sequential(layers)
         self.loss = loss
