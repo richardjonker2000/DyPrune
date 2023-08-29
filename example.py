@@ -102,14 +102,11 @@ def main():
 
     for j in range(10):
         # a simple model, note the input layer does not need to be specified. A full list of parameters, as well as their explanantions can be seen in the main file.
-        model = DynamicNeuralNetwork(number_of_layers=4, neurons=[1000, 1000, 1000, 10],
+        model = DyPrune(number_of_layers=4, neurons=[1000, 1000, 1000, 10],
                                          optimizer=torch.optim.AdamW,
                                          # learning_rate=0.03,
                                          pruning=False, pruning_rate="dynamic", pruning_iter=2, pruning_type="l1",
                                          pruning_min=0, pruning_max=0.05,
-                                         growing=False, growing_iter=3, neuron_init_type="average",
-                                         growing_min=-0.05, growing_max=0,
-                                         add_layers=False, add_layer_countdown=0, add_layers_iter=15,
                                          regularization=False)
         model.to(device)
         model.forward(torch.zeros((1, 28, 28)).to(device))
@@ -120,7 +117,7 @@ def main():
         model.fit(25, train_dataloader, test_dataloader, validation_dataloader)
         #model.visualize(INPUT_SIZE) #can be run to see a neural network that has been pruned. 
         model.save("results/Fashion_mnist")
-  print("=====================================================================================================")
+    print("=====================================================================================================")
 
  
 
